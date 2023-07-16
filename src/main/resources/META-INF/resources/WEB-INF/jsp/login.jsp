@@ -3,6 +3,6 @@
         <title> Login Page </title>
     </head>
     <body>
-        Login page view.
+        Login page view. ${name}
     </body>
 </html>
