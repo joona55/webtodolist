@@ -1,13 +1,9 @@
 <html>
     <head>
-        <title> Login Page </title>
+        <title> Welcome Page </title>
     </head>
     <body>
-        Login page view.
-        <form method="post">
-            Name : <input type="text" name="name">
-            Password : <input type="password" name="password">
-            <input type="submit">
-        </form>
+        <div> Welcome to main page. </div>
+        <div> Your name : ${name} </div>
     </body>
 </html>

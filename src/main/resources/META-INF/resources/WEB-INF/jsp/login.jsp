@@ -4,9 +4,10 @@
     </head>
     <body>
         Login page view.
+        <pre>${errorMessage}</pre>
         <form method="post">
-            Name : <input type="text" name="name">
-            Password : <input type="password" name="password">
+            <div> Name : <input type="text" name="name"> </div>
+            <div> Password : <input type="password" name="password"> </div>
             <input type="submit">
         </form>
     </body>
