@@ -8,7 +8,7 @@ public class LoginController {
 
     @RequestMapping("login")
     public String gotoLoginPage() {
-        return "login.jsp";
+        return "login";
     }
 
 }
