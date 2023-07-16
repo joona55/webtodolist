@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class SayHelloController {
 
-    @RequestMapping("say-Hello")
+    @RequestMapping("say-hello")
     @ResponseBody
     public String sayHello() {
         return "Hello!";
     }
 
-    @RequestMapping("say-Hello-html")
+    @RequestMapping("say-hello-html")
     @ResponseBody
     public String sayHelloHtml() {
 
@@ -29,5 +29,12 @@ public class SayHelloController {
         sb.append("</html>");
 
         return sb.toString();
+    }
+
+    // src/main/resources/META-INF/resources/jsp/sayHello.jsp
+    @RequestMapping("say-hello-Jsp")
+    public String sayHelloJsp() {
+
+        return "sayHello";
     }
 }
