@@ -1,5 +1,7 @@
 package com.example.springboot.webtodolist.todo;
 
+import jakarta.validation.constraints.Size;
+
 import java.time.LocalDate;
 
 // 1. 정적 리스트로 구현
@@ -8,9 +10,14 @@ import java.time.LocalDate;
 public class Todo {
 
     private int id;
+
     private String userName;
+
+    @Size(min=10, message="Enter at least 10 characters")
     private String description;
+
     private LocalDate targetDate;
+
     private boolean done;
 
     public Todo(int id, String userName, String description, LocalDate targetDate, boolean done) {
