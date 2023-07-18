@@ -1,5 +1,6 @@
 package com.example.springboot.webtodolist.todo;
 
+import jakarta.validation.Valid;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -35,12 +36,25 @@ public class TodoService {
 
     public void deleteById(int id) {
         /*
-        Predicat<T>로 사용되고 여기서 T는 파라미터이자 조건이다.
+        Predicate<T>로 사용되고 여기서 T는 파라미터이자 조건이다.
         T가 true 또는 false를 return 하도록한다.
         */
         // todo -> todo.getid() == id;
         Predicate<? super Todo> predicate
                         = todo -> todo.getId() == id;
         todos.removeIf(predicate);
+    }
+
+    public Todo findById(int id) {
+
+        // todo -> todo.getid() == id;
+        Predicate<? super Todo> predicate
+                = todo -> todo.getId() == id;
+        return todos.stream().filter(predicate).findFirst().get();
+    }
+
+    public void updateTodo(@Valid Todo todo) {
+        deleteById(todo.getId());
+        todos.add(todo);
     }
 }
