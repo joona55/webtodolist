@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 @Service
 public class TodoService {
@@ -30,5 +31,16 @@ public class TodoService {
                         LocalDate localDate, Boolean done) {
        Todo todo = new Todo(todosCount++, userName, description, localDate, done);
        todos.add(todo);
+    }
+
+    public void deleteById(int id) {
+        /*
+        Predicat<T>로 사용되고 여기서 T는 파라미터이자 조건이다.
+        T가 true 또는 false를 return 하도록한다.
+        */
+        // todo -> todo.getid() == id;
+        Predicate<? super Todo> predicate
+                        = todo -> todo.getId() == id;
+        todos.removeIf(predicate);
     }
 }
