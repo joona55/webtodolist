@@ -1,14 +1,21 @@
 package com.example.springboot.webtodolist.todo;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.Size;
 
 import java.time.LocalDate;
 
 // 1. 정적 리스트로 구현
 // 2. 데이터베이스로 구현
+// JPA를 통해 Bean을 DataBase로
 
+@Entity
 public class Todo {
 
+    @Id
+    @GeneratedValue
     private int id;
 
     private String userName;
